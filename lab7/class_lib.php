@@ -15,7 +15,7 @@ abstract class ClaseAbstracta {
     abstract protected function prefixValor($prefix);
     //Metodo comun
     public function printOut() {
-        print $this->tomarValor() . "<br>";
+        print $this->tomarValor() . "<br>"; //-> Para referirse a un metodo u objeto
     }
 }
 //////////////////////////////////////////////
@@ -45,13 +45,59 @@ interface iTemplate {
 class Template implements iTemplate {
     private $vars = array();
     public function ponerVariable($nombre, $var) {
-        $this->vars[$nombre] = $var;
+        $this->vars[$nombre] = $var; //-> Para referirse a un metodo u objeto
     }
     public function verHtml($template) {
-        foreach($this->vars as $nombre => $value) {
+        foreach($this->vars as $nombre => $value) { //-> Para referirse a un metodo u objeto
             $template = str_replace('{' . $nombre .'}', $value, $template);
         }
         return $template;
     }
+}
+////////////////////lab 7.5/////////////////////
+class SubObject {
+    static $instances = 0;
+    public $instance;
+
+    public function __construct() {
+        $this->instance = ++self::$instances;
+    }
+}
+////////////////////////////////////////////////
+class MyCloneable {
+    public $object1;
+    public $object2;
+
+    function __clone() {
+        //Forzar una copia de this->object
+        $this->object1= clone $this->object1;
+    }
+}
+///////////////////////////////////////////////
+class Cilindro {
+    protected $pi; //Protected: se puede acceder al atributo o método desde la clase que lo define y desde cualquier otra que herede de esta clase.
+    protected $diametro;
+    protected $altura;
+    protected $radio
+
+function __construct($d, $a) {
+    $this->diametro = $d;
+    $this->altura = $a; 
+    $this->pi = 3.141593;
+    $this->radio = $d/2;
+    }
+
+function obtener_radio() {
+    return $radio;
+}
+
+function calc_volumen() {
+    return $this->pi*$this->radio*$this->radio*$this->altura;
+}
+
+function calc_area() {
+    return 2*$this->pi*$this->radio*($this->radio+$this->altura);
+}
+
 }
 ?>
