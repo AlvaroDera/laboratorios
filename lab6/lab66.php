@@ -16,4 +16,6 @@ class ClaseHijo extends ClaseBase {
     
 }
 
+//Envia un error porque la ClaseHijo no puede heredar de ClaseBase
+
 ?>
