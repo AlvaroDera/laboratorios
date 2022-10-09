@@ -6,7 +6,7 @@
     <title> Laboratorio 11.1 </title>
 </head>
 <body> 
-    <!-- comentario -->
+    <!-- comentario mas -->
     <h1> Consulta de noticias </h1>
 
     <?php
