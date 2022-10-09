@@ -5,7 +5,8 @@
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <title> Laboratorio 11.1 </title>
 </head>
-<body>
+<body> 
+    <!-- comentario -->
     <h1> Consulta de noticias </h1>
 
     <?php
