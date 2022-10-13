@@ -16,7 +16,7 @@
         if(isset($_SESSION['var'])) {
             $var = $_SESSION['var'];
         }
-        else {
+        else { ////
             $var = "";
         }
         print ("<p> Valor de la variable de sesion: $var </p>\n");
